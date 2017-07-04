@@ -1,0 +1,42 @@
+.tabs_wrap {
+	margin: 20px 20px 40px 0;
+}
+
+.tabs_wrap > li {
+	list-style: none;
+    background-color: #eee;
+    padding: 5px 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.list_wrap {
+	min-width: 1000px;
+}
+
+.list_wrap li {
+	height: 200px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.list_wrap .intro {
+	width: 85%;
+}
+
+.list_wrap .intro p {
+	margin: 0;
+}
+
+.list_wrap .intro p label{
+	margin-right: 10px;
+}
+
+.list_wrap .intro p span{
+	color: #9d9d9d;
+}
+
+.list_wrap .intro .summary{
+	max-height: 68px;
+    overflow-y: hidden;
+}
