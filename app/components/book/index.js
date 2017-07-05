@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setBookList } from '../../actions';
 import { getBookList } from './request';
-import bookItem from './list';
+import bookItem from './book';
 
 export class bookContent extends React.Component{
     constructor(){
@@ -40,7 +40,7 @@ export class bookContent extends React.Component{
                 {
                     this.props.list.map((item, index) => {
                         console.log(item);
-                        
+
                         return 
                             <bookItem key={index} content={item} />
                         
