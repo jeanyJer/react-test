@@ -6,7 +6,7 @@ export default {
   childRoutes: [
     {
       path: 'book',
-      component: require('../components/book/index').default
+      component: require('../components/book/bookList').default
     },
     {
       path: 'movie',

@@ -98,14 +98,6 @@ export function post (url, data={}, handler, sync) {
 function request (url, data, handler, sync, method) {
 
     var defer = $.Deferred();
-    // 去掉参数的字符串空格
-    // if ($.type(data) == 'object') {
-    //     for (let key in data) {
-    //         if ($.type(data[key]) == 'string') {
-    //             data[key] = data[key].replace(/[ ]/g,"");
-    //         }
-    //     }
-    // }
     $
         .ajax({
             url: url,

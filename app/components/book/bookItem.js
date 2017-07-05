@@ -1,23 +1,18 @@
 import React, { PropTypes } from 'react';
 
-class bookItem extends React.Component{
+class BookItem extends React.Component{
 	constructor(props){
-		debugger;
-        console.log(props);
         super(props)
-        console.log(props);
     }
 
     render() {
     	let content = this.props.content;
-    	console.log('content', content);
-    	debugger;
     	return (
     			<li className="clearfix">
 		            <img src={content.image} className="left"/>
 		            <div className="right intro">
 		                <p>
-		                    <label>{ '书名: ' }</label> 
+		                    <label>{ '书名: ' }</label>
 		                    <span>{content.title}</span>
 		                </p>
 		                <p>
@@ -50,4 +45,4 @@ class bookItem extends React.Component{
 }
 
 
-export default bookItem;
+export default BookItem;

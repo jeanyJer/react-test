@@ -6,7 +6,7 @@ import reducer from './reducers/book';
 import { Router, Route, browserHistory, IndexRoute} from 'react-router';
 import routes from './routes/index';
 import App from './components/App';
-import bookContent from './components/book/index';
+import BookList from './components/book/bookList';
 import movieContent from './components/movie/index';
 
 //根据reducer创建一个store
@@ -24,8 +24,8 @@ ReactDOM.render(
 	<Provider store={store}>
 		<Router history={browserHistory}>
 		    <Route path="/" component={App}>
-		    	<IndexRoute component={bookContent} />
-		      	<Route path="book" component={bookContent}/>
+		    	<IndexRoute component={BookList} />
+		      	<Route path="book" component={BookList}/>
 		      	<Route path="movie" component={movieContent}/>
 		    </Route>
   		</Router>

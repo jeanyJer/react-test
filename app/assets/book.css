@@ -1,5 +1,5 @@
 .tabs_wrap {
-	margin: 20px 20px 40px 0;
+	margin: 20px 20px 20px 0;
 }
 
 .tabs_wrap > li {
@@ -8,6 +8,28 @@
     padding: 5px 20px;
     margin-right: 20px;
     border-radius: 5px;
+}
+
+.search_wrap {
+	margin: 20px 20px 20px 0;
+}
+
+.search_wrap .btn {
+	background-color: #eee;
+    padding: 3px 15px;
+    outline: none;
+}
+
+.search_wrap .left {
+	margin-right: 20px;
+}
+
+.search_wrap .left label{
+	margin-right: 10px;
+}
+
+.search_wrap .left input{
+	outline: none;
 }
 
 .list_wrap {
@@ -40,3 +62,33 @@
 	max-height: 68px;
     overflow-y: hidden;
 }
+
+.page_wrap {
+	position: relative;
+	margin: 30px;
+}
+
+.page_wrap >span {
+	position: absolute;
+	top: 0;
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.page_wrap .page_up {
+	left: 0;
+}
+
+.page_wrap .page_down {
+	right: 0;
+}
+
+.page_wrap p{
+	text-align: center;
+}
+
+
+
+

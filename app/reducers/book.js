@@ -1,7 +1,8 @@
+import { combineReducers } from 'redux';
 
 const initSearchInfo = {
 	searchInfo: {},
-	bookList: []
+	list: []
 };
 
 const bookList = (state = initSearchInfo, action) => {
@@ -10,12 +11,27 @@ const bookList = (state = initSearchInfo, action) => {
 			let newState = {};
 			let info = Object.assign({}, state.searchInfo, action.info.searchInfo);
 			newState.searchInfo = info;
-			newState.bookList = action.info.bookList;
+			newState.list = action.info.list;
 			return newState;
 		default:
 			return state;
 	}
 }
 
+const currentPage = (state = 1, action) => {
+	switch (action.type) {
+		case 'PAGE_UP':
+			return state - 1;
+		case 'PAGE_DOWN':
+			return state + 1;
+		default:
+			return state
+	}
+}
 
-export default bookList
+const bookInfos = combineReducers({
+  bookList,
+  currentPage
+})
+
+export default bookInfos
