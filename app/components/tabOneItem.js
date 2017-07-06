@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Elem = () => (
+const TabOneItem = () => (
 	<li>
 		my list
 	</li>
 )
 
-export default Elem
+export default TabOneItem

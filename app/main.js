@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducer from './reducers/book';
+import reducer from './reducers/index';
 import { Router, Route, browserHistory, IndexRoute} from 'react-router';
 import routes from './routes/index';
 import App from './components/App';
-import BookList from './components/book/bookList';
+import VisibleBookList from './containers/visibleBookList';
 import movieContent from './components/movie/index';
 
 //根据reducer创建一个store
@@ -24,8 +24,8 @@ ReactDOM.render(
 	<Provider store={store}>
 		<Router history={browserHistory}>
 		    <Route path="/" component={App}>
-		    	<IndexRoute component={BookList} />
-		      	<Route path="book" component={BookList}/>
+		    	<IndexRoute component={VisibleBookList} />
+		      	<Route path="book" component={VisibleBookList}/>
 		      	<Route path="movie" component={movieContent}/>
 		    </Route>
   		</Router>

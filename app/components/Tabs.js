@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import List from './List';
-import Map from './Map';
+import TabOneList from './tabOneList';
+import TabTwo from './tabTwo';
 import { setChangeTab } from '../actions';
 
 export class Tabs extends React.Component{
@@ -37,11 +37,11 @@ export class Tabs extends React.Component{
 							switch (index) {
 								case 0:
 								return	(
-									<div key={tabName} className={ this.check_item_index(index) }><List /></div>
+									<div key={tabName} className={ this.check_item_index(index) }><TabOneList /></div>
 								);
 								case 1:
 									return (
-									<div key={tabName} className={ this.check_item_index(index) }><Map /></div>
+									<div key={tabName} className={ this.check_item_index(index) }><TabTwo /></div>
 								);
 								default:
 									return (

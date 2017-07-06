@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { setBookList, setPageUp, setPageDown } from '../../actions';
 import { getBookList } from './request';
 import BookItem from './bookItem';
-import $ from 'jQuery';
+import $ from 'jquery';
 
-export class BookList extends React.Component{
+class BookList extends React.Component{
     constructor(){
         super()
     }
@@ -110,27 +110,5 @@ export class BookList extends React.Component{
     }
 }
 
-const mapStateToProps = (state) => {
-    console.log('state', state);
-    return {
-      search: state.bookList.searchInfo,
-      list: state.bookList.list,
-      page: state.currentPage
-    }
-}
+export default BookList;
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setBookList: (param) => {
-            dispatch(setBookList(param))
-        },
-        setPageUp: () => {
-            dispatch(setPageUp())
-        },
-        setPageDown: () => {
-            dispatch(setPageDown())
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(BookList)

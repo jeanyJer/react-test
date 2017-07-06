@@ -28,16 +28,5 @@ describe('Tabs', () => {
   it('Tabs item should render', () => {
     expect(wrapper.find(".tab_title_wrap").exists())
   })
-
-  //点击tab, changeTab方法会被调用
-  it('click tab, changeTab called', () => {
-     const mockEvent = {
-       key: 'click',
-     }
-    console.log("qqqq", wrapper.find('.tab_title').length)
-     //.simulate('click', mockEvent)
-     //expect(props.changeTab).toBeCalled()
-  })
-  
 })
 
