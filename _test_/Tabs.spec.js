@@ -20,10 +20,6 @@ const setup = () => {
 describe('Tabs', () => {
   const { props, wrapper } = setup()
 
-  console.log('tab_title_wrap', wrapper.html());
-
-  // console.log('tab_item_wrap', wrapper.find(".tab_item_wrap"));
-
   //判断组件是否被渲染
   it('Tabs item should render', () => {
     expect(wrapper.find(".tab_title_wrap").exists())

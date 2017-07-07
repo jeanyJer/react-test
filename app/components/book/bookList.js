@@ -36,8 +36,8 @@ class BookList extends React.Component{
     }
 
     searchBooks() {
-        let key = $('.search_key').val().trim();
-        let tag = $('.search_tag').val().trim();
+        let key = $('.search_key').val();
+        let tag = $('.search_tag').val();
 
         if( key || tag) {
             let param = {
