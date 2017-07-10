@@ -12,13 +12,6 @@ import movieContent from './components/movie/index';
 //根据reducer创建一个store
 const store = createStore(reducer)
 
-/******for dynamic components*****/
-// ReactDOM.render(
-// 	<Provider store={store}>
-// 		<App />
-// 	</Provider>,
-//   document.getElementById('root')
-// );
 
 ReactDOM.render(
 	<Provider store={store}>

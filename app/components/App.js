@@ -1,14 +1,5 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import Tabs from './Tabs';
-
-/******for dynamic components*****/
-// const App = () => (
-// 	<div>
-// 		<Tabs />
-// 	</div>
-// )
-
 
 const App = React.createClass({
   	render: function () {

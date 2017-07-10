@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setBookList, setPageUp, setPageDown } from '../../actions';
-import { getBookList } from './request';
+import { getBooks } from './request';
 import BookItem from './bookItem';
 import $ from 'jquery';
 
@@ -20,24 +19,28 @@ class BookList extends React.Component{
 
     getBookList(param) {
         let newBookInfo = {};
-        getBookList(param)
+        getBooks(param)
             .then((res) => {
+                /* istanbul ignore next */
                 let temp = {
                     count: res.count,
                     start: res.start,
                     total: res.total
                 };
+                 /* istanbul ignore next */
                 let info = Object.assign({}, param, temp);
-
+                /* istanbul ignore next */
                 newBookInfo.searchInfo = info;
+                /* istanbul ignore next */
                 newBookInfo.list = res.books;
+                /* istanbul ignore next */
                 this.props.setBookList(newBookInfo);
             });
     }
 
     searchBooks() {
-        let key = $('.search_key').val();
-        let tag = $('.search_tag').val();
+        let key = $.trim($('.search_key').val());
+        let tag = $.trim($('.search_tag').val());
 
         if( key || tag) {
             let param = {

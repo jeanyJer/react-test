@@ -1,7 +1,6 @@
 import React from 'react';
 import BookList from '../../../app/components/book/bookList';
 import { mount } from 'enzyme';
-import sinon from 'sinon';
 
 const setup = () => {
 	const props = {
@@ -28,9 +27,9 @@ const setup = () => {
       		}
       	],
       	page: 2,
-      	setBookList: sinon.spy(),
-      	setPageUp: sinon.spy(),
-      	setPageDown: sinon.spy()
+      	setBookList: jest.fn(),
+      	setPageUp: jest.fn(),
+      	setPageDown: jest.fn()
 	};
 	const wrapper = mount(<BookList {...props} />);
 	return {
@@ -46,25 +45,36 @@ describe('This is a test for bookList component', () => {
 
 	it('BookList component should be render', () => {
 		expect(wrapper.find(".list_wrap").exists());
+		expect(wrapper.find(".list_wrap").find("li").length).toEqual(2);
 	});
 
 	it('current page number should be show', () => {
 		expect(wrapper.find('.page_wrap').children('p').text()).toBe('2');
 	});
 
-	it('search button clicked', () => {
-		wrapper.find('.btn').simulate('click');
+	it('search button clicked', async () => {
+	 	wrapper.find('.btn').simulate('click');
 
-		// console.log('searchBooks', BookList.prototype.searchBooks);
+	 	let param = {
+	  		q: props.q,
+	  		tag: props.tag
+	  	};
 
-		//jest.spyOn(BookList.prototype, 'searchBooks');
-		
-		//expect(BookList.prototype.searchBooks).toBeCalled();
-		expect(props.setBookList).toBeCalled();
+	  	await BookList.prototype.getBookList(param);
+
+	 	jest.spyOn(BookList.prototype, 'getBookList');
+		//expect(BookList.prototype.getBookList).toBeCalled();
 	});
 
+	it('page up button clicked', () => {
+	 	wrapper.find('.page_up').simulate('click');
+		expect(props.setPageUp).toBeCalled();
+	});
 
-
+	it('page down button clicked', () => {
+	 	wrapper.find('.page_down').simulate('click');
+		expect(props.setPageDown).toBeCalled();
+	});
 
 });
 

@@ -8,10 +8,10 @@ export const setBookList = (info) => ({
 	info
 })
 
-export const setPageUp = (info) => ({
+export const setPageUp = () => ({
 	type: 'PAGE_UP'
 })
 
-export const setPageDown = (info) => ({
+export const setPageDown = () => ({
 	type: 'PAGE_DOWN'
 })
