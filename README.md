@@ -1,3 +1,7 @@
+## iReading
+
+[![Build Status](https://travis-ci.org/jeanyJer/react-test.svg?branch=master)](https://travis-ci.org/jeanyJer/react-test)
+
 This repo is a boilerplate for React-Babel-Webpack project. You could use it as a base to build your own web app.
 
 ## Features
