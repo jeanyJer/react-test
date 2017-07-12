@@ -7,10 +7,10 @@ import { Router, Route, browserHistory, IndexRoute} from 'react-router';
 import routes from './routes/index';
 import App from './components/App';
 import VisibleBookList from './containers/visibleBookList';
-import movieContent from './components/movie/index';
+import MovieList from './components/movie/movieList';
 
 //根据reducer创建一个store
-const store = createStore(reducer)
+const store = createStore(reducer);
 
 
 ReactDOM.render(
@@ -18,8 +18,8 @@ ReactDOM.render(
 		<Router history={browserHistory}>
 		    <Route path="/" component={App}>
 		    	<IndexRoute component={VisibleBookList} />
-		      	<Route path="book" component={VisibleBookList}/>
-		      	<Route path="movie" component={movieContent}/>
+		      	<Route path="book" component={VisibleBookList} />
+		      	<Route path="movie" component={MovieList} />
 		    </Route>
   		</Router>
 	</Provider>,
