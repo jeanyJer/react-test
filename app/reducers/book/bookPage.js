@@ -8,7 +8,5 @@ const currentPage = (state = 1, action) => {
 		default:
 			return state
 	}
-}
 
-
-export default currentPage
+export default currentPage;

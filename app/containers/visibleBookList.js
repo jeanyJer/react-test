@@ -3,9 +3,9 @@ import { setBookList, setPageUp, setPageDown } from '../actions';
 import BookList from '../components/book/bookList';
 
 const mapStateToProps = (state) => {
-    console.log('state', state);
+    console.log('bookState', state);
     return {
-      search: state.bookList.searchInfo,
+      search: state.bookList.info,
       list: state.bookList.list,
       page: state.currentPage
     }

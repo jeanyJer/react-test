@@ -2,7 +2,7 @@ export default {
   path: '/',
 
   component: require('../components/App').default,
-  
+
   childRoutes: [
     {
       path: 'book',
@@ -10,7 +10,7 @@ export default {
     },
     {
       path: 'movie',
-      component: require('../components/movie/index').default
+      component: require('../components/movie/movieList').default
     }
   ]
 }
@@ -20,5 +20,5 @@ export default {
   ├ /
   ├ /book
   ├ /movie
-  ├ 
+  ├
 */

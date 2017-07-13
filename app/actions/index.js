@@ -1,17 +1,17 @@
-export const setChangeTab = (index) => ({
-	type: 'CHANGE_TAB',
-	index
-})
-
-export const setBookList = (info) => ({
-	type: 'SET_BOOKS',
-	info
+export const setBookList = (bookInfo) => ({
+    type: 'SET_BOOKS',
+    bookInfo
 })
 
 export const setPageUp = () => ({
-	type: 'PAGE_UP'
+	  type: 'PAGE_UP'
 })
 
 export const setPageDown = () => ({
-	type: 'PAGE_DOWN'
+	  type: 'PAGE_DOWN'
 })
+
+export const setMovieList = (movieInfo) => {
+    type: 'SET_MOVIES',
+    movieInfo
+}

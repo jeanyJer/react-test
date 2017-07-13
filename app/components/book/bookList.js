@@ -30,7 +30,7 @@ class BookList extends React.Component{
                  /* istanbul ignore next */
                 let info = Object.assign({}, param, temp);
                 /* istanbul ignore next */
-                newBookInfo.searchInfo = info;
+                newBookInfo.info = info;
                 /* istanbul ignore next */
                 newBookInfo.list = res.books;
                 /* istanbul ignore next */
@@ -103,7 +103,7 @@ class BookList extends React.Component{
                         })
                     }
                 </ul>
-                <div className="page_wrap"> 
+                <div className="page_wrap">
                     <span className="page_up" onClick={ () => { this.PageUp() }}>{'<'}</span>
                     <p>{ this.props.page }</p>
                     <span className="page_down" onClick={ () => { this.PageDown() }}>{'>'}</span>
