@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import bookList from './book/bookList';
-import movieList from './book/movieList';
+import movieList from './movie/movieList';
 import currentPage from './book/bookPage';
 
 
