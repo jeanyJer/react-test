@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setMovieList, setPageUp, setPageDown } from '../actions';
+import { setPageUp, setPageDown, getMovieList } from '../actions';
 import MovieList from '../components/movie/movieList';
 
 const mapStateToProps = (state) => {
@@ -7,25 +7,12 @@ const mapStateToProps = (state) => {
   return {
     search: state.movieList.info,
     list: state.movieList.list,
-    page: state.currentPage
+    page: state.currentMoviePage
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setBookList: (param) => {
-      dispatch(setMovieList(param))
-    },
-    setPageUp: () => {
-      dispatch(setPageUp())
-    },
-    setPageDown: () => {
-      dispatch(setPageDown())
-    }
-  }
-}
 
-const VisibleMovieList = connect(mapStateToProps, mapDispatchToProps)(MovieList);
+const VisibleMovieList = connect(mapStateToProps, {setPageUp, setPageDown, getMovieList })(MovieList);
 
 export default VisibleMovieList;
 

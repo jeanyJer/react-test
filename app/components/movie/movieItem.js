@@ -9,33 +9,39 @@ class MovieItem extends React.Component{
     let content = this.props.content;
     return (
       <li className="clearfix">
-        <img src={content.image} className="left"/>
+        <img src={content.images.medium} className="left"/>
         <div className="right intro">
           <p>
-            <label>{ '书名: ' }</label>
+            <label>{ '电影: ' }</label>
             <span>{content.title}</span>
           </p>
           <p>
-            <label>{ '作者: ' }</label>
+            <label>{ '导演: ' }</label>
             <span>
-		                        {
-                              content.author.map((elem) => {
-                                return elem
-                              })
-                            }
-		                    </span>
+                  {
+                    content.genres.map((elem) => {
+                      return elem
+                    })
+                  }
+              </span>
           </p>
           <p>
-            <label>{ '标签: ' }</label>
+            <label>{ '年份: ' }</label>
             <span>
-		                        { '暂无' }
-		                    </span>
+                {content.year}
+            </span>
           </p>
           <p className="summary">
-            <label>{ '简介: ' }</label>
+            <label>{ '评分: ' }</label>
             <span>
-		                        {content.summary}
-		                    </span>
+                {content.rating.average}
+            </span>
+          </p>
+          <p>
+            <label>{ '观看次数: ' }</label>
+            <span>
+                {content.collect_count}
+            </span>
           </p>
         </div>
       </li>

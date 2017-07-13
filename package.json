@@ -64,8 +64,10 @@
 			}
 		},
 		"coveragePathIgnorePatterns": [
-					"/app/service.js"
+			"/app/service.js"
 		]
 	},
-	"devDependencies": {}
+	"devDependencies": {
+		"redux-thunk": "^2.2.0"
+	}
 }

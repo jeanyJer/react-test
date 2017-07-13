@@ -1,13 +1,15 @@
 import { combineReducers } from 'redux';
 import bookList from './book/bookList';
+import currentBookPage from './book/bookPage';
+import currentMoviePage from './movie/moviePage';
 import movieList from './movie/movieList';
-import currentPage from './book/bookPage';
 
 
 const library = combineReducers({
   bookList,
   movieList,
-  currentPage
+  currentBookPage,
+  currentMoviePage
 });
 
  export default library;

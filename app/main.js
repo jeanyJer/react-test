@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import reducer from './reducers/index';
 import { Router, Route, browserHistory, IndexRoute} from 'react-router';
@@ -10,8 +11,10 @@ import VisibleBookList from './containers/visibleBookList';
 import VisibleMovieList from './containers/visibleMovieList';
 
 //根据reducer创建一个store
-const store = createStore(reducer);
-
+const store = createStore(
+  reducer,
+  applyMiddleware(thunk)
+);
 
 ReactDOM.render(
 	<Provider store={store}>

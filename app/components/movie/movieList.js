@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import $ from 'jquery';
-import { getMovies } from './request';
 import MovieItem from './movieItem';
 
 class MovieList extends React.Component{
@@ -9,35 +8,12 @@ class MovieList extends React.Component{
     super()
   }
 
-  componentWillMount() {
-    let param = {
-      q: '图书',
-      tag: ''
-    };
-    this.getBookList(param);
-  }
-
-  getBookList(param) {
-    let newMovieInfo = {};
-    getMovies(param)
-      .then((res) => {
-        /* istanbul ignore next */
-        let temp = {
-          count: res.count,
-          start: res.start,
-          total: res.total,
-          query: res.query,
-          tag: res.tag
-        };
-        /* istanbul ignore next */
-        let info = Object.assign({}, temp);
-        /* istanbul ignore next */
-        newMovieInfo.searchInfo = info;
-        /* istanbul ignore next */
-        newMovieInfo.list = res.subjects;
-        /* istanbul ignore next */
-        this.props.setMovieList(newMovieInfo);
-      });
+  componentDidMount() {
+      let param = {
+          q: '张艺谋',
+          tag: ''
+      };
+      this.props.getMovieList(param);
   }
 
   searchBooks() {
@@ -49,7 +25,7 @@ class MovieList extends React.Component{
         q: key,
         tag: tag
       }
-      this.getBookList(param);
+      this.props.getMovieList(param);
     }
   }
 
@@ -62,8 +38,8 @@ class MovieList extends React.Component{
         tag: info.tag,
         start: info.start - info.count
       };
-      this.getBookList(param);
-      props.setPageUp();
+      this.props.getMovieList(param);
+      this.props.setPageUp('movie');
     }
   }
 
@@ -76,8 +52,8 @@ class MovieList extends React.Component{
         tag: info.tag,
         start: info.start + info.count
       };
-      this.getBookList(param);
-      props.setPageDown();
+      this.props.getMovieList(param);
+      this.props.setPageDown('movie');
     }
   }
 

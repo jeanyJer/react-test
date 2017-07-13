@@ -61,7 +61,7 @@ function requestJSON (url, data, handler, sync, method) {
                 } else {
                     errorHandler(res);
                 }
-                
+
                 defer.reject(res);
             } else {
                 defer.resolve(res);
@@ -109,7 +109,7 @@ function request (url, data, handler, sync, method) {
         .done(function (res) {
             if (res.code) {
                 if (handler) {
-                    handler(res) 
+                    handler(res)
                 } else {
                     errorHandler(res);
                 }

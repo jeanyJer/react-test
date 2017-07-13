@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getBooks } from './request';
 import BookItem from './bookItem';
 import $ from 'jquery';
 
@@ -14,28 +13,7 @@ class BookList extends React.Component{
             q: '图书',
             tag: ''
         };
-        this.getBookList(param);
-    }
-
-    getBookList(param) {
-        let newBookInfo = {};
-        getBooks(param)
-            .then((res) => {
-                /* istanbul ignore next */
-                let temp = {
-                    count: res.count,
-                    start: res.start,
-                    total: res.total
-                };
-                 /* istanbul ignore next */
-                let info = Object.assign({}, param, temp);
-                /* istanbul ignore next */
-                newBookInfo.info = info;
-                /* istanbul ignore next */
-                newBookInfo.list = res.books;
-                /* istanbul ignore next */
-                this.props.setBookList(newBookInfo);
-            });
+        this.props.getBookList(param);
     }
 
     searchBooks() {
@@ -47,7 +25,7 @@ class BookList extends React.Component{
                 q: key,
                 tag: tag
             }
-            this.getBookList(param);
+           this.props.getBookList(param);
         }
     }
 
@@ -60,8 +38,8 @@ class BookList extends React.Component{
                 tag: info.tag,
                 start: info.start - info.count
             };
-            this.getBookList(param);
-            props.setPageUp();
+            this.props.getBookList(param);
+            this.props.setPageUp('book');
         }
     }
 
@@ -74,8 +52,8 @@ class BookList extends React.Component{
                 tag: info.tag,
                 start: info.start + info.count
             };
-            this.getBookList(param);
-            props.setPageDown();
+            this.props.getBookList(param);
+            this.props.setPageDown('book');
         }
     }
 
