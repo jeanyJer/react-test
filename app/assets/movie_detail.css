@@ -1,0 +1,11 @@
+.movie_detail .info {
+    margin-left: 20px;
+}
+
+.movie_detail label {
+  margin-right: 20px;
+}
+
+.movie_detail .summary {
+  margin-top: 20px;
+}

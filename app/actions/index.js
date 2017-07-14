@@ -1,6 +1,6 @@
-import { getMovies, getBooks } from './request';
+import { getMovies, getBooks} from './request';
 
-export const setBookList = (bookInfo) => ({
+const setBookList = (bookInfo) => ({
     type: 'SET_BOOKS',
     bookInfo
 })
@@ -15,11 +15,16 @@ export const setPageDown = (tag) => ({
     tag
 })
 
+export const resetPage = (tag) => ({
+  type: 'PAGE_RESET',
+  tag
+})
 
 const setMovieList = (movieInfo) => ({
     type: 'SET_MOVIES',
     movieInfo
 })
+
 
 export const getBookList = (param) => {
   return (dispatch) => {
@@ -56,3 +61,4 @@ export const getMovieList = (param) => {
       });
   }
 }
+

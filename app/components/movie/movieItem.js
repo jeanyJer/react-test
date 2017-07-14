@@ -10,7 +10,7 @@ class MovieItem extends React.Component{
     return (
       <li className="clearfix">
         <img src={content.images.medium} className="left"/>
-        <div className="right intro">
+         <div className="right intro">
           <p>
             <label>{ '电影: ' }</label>
             <span>{content.title}</span>

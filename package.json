@@ -68,6 +68,7 @@
 		]
 	},
 	"devDependencies": {
+		"react-loading-animation": "^1.3.0",
 		"redux-thunk": "^2.2.0"
 	}
 }

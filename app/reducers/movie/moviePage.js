@@ -5,6 +5,8 @@ const currentMoviePage = (state = 1, action) => {
         return state - 1;
       case 'PAGE_DOWN':
         return state + 1;
+      case 'PAGE_RESET':
+        return 1;
       default:
         return state;
     }

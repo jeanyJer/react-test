@@ -25,7 +25,13 @@ export function getBooks (param) {
 }
 
 
-
-
+/**
+ * 获取电影详情
+ * @return {Promise}
+ */
+export function getDetail (param) {
+  let url = 'https://api.douban.com/v2/movie/subject/' + param.id;
+  return getJsonp(url);
+}
 
 

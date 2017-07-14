@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getBookList, setPageUp, setPageDown } from '../actions';
+import { getBookList, setPageUp, setPageDown, resetPage } from '../actions';
 import BookList from '../components/book/bookList';
 
 const mapStateToProps = (state) => {
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 }
 
 
-const VisibleBookList = connect(mapStateToProps, { getBookList, setPageUp, setPageDown })(BookList);
+const VisibleBookList = connect(mapStateToProps, { getBookList, setPageUp, setPageDown, resetPage })(BookList);
 
 export default VisibleBookList;
 

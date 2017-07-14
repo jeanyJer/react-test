@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setPageUp, setPageDown, getMovieList } from '../actions';
+import { setPageUp, setPageDown, getMovieList, resetPage } from '../actions';
 import MovieList from '../components/movie/movieList';
 
 const mapStateToProps = (state) => {
@@ -11,8 +11,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-
-const VisibleMovieList = connect(mapStateToProps, {setPageUp, setPageDown, getMovieList })(MovieList);
+const VisibleMovieList = connect(mapStateToProps, {setPageUp, setPageDown, getMovieList, resetPage})(MovieList);
 
 export default VisibleMovieList;
 

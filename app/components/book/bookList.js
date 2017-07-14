@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import BookItem from './bookItem';
 import $ from 'jquery';
 
@@ -26,6 +25,7 @@ class BookList extends React.Component{
                 tag: tag
             }
            this.props.getBookList(param);
+           this.props.resetPage('book');
         }
     }
 

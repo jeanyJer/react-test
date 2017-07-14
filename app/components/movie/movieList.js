@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import $ from 'jquery';
+import { Link } from 'react-router';
 import MovieItem from './movieItem';
 
 class MovieList extends React.Component{
@@ -26,6 +26,7 @@ class MovieList extends React.Component{
         tag: tag
       }
       this.props.getMovieList(param);
+      this.props.resetPage('movie');
     }
   }
 
@@ -75,8 +76,11 @@ class MovieList extends React.Component{
         <ul className="list_wrap">
           {
             this.props.list.map((item, index) => {
+              let path = '/movie_detail/' + item.id;
               return (
-                <MovieItem key={index} content={item} />
+                <Link to={path} key={index}>
+                  <MovieItem content={item} />
+                </Link>
               )
             })
           }
