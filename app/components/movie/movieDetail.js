@@ -1,6 +1,6 @@
 import React from 'react';
 import Loading from 'react-loading-animation';
-import { getDetail } from '../../actions/request';
+import { getDetail } from '../request';
 
 class MovieDetail extends React.Component{
   constructor(){

@@ -1,6 +1,6 @@
-import { getMovies, getBooks} from './request';
+import { getMovies, getBooks} from '../components/request';
 
-const setBookList = (bookInfo) => ({
+export const setBookList = (bookInfo) => ({
     type: 'SET_BOOKS',
     bookInfo
 })
@@ -20,7 +20,7 @@ export const resetPage = (tag) => ({
   tag
 })
 
-const setMovieList = (movieInfo) => ({
+export const setMovieList = (movieInfo) => ({
     type: 'SET_MOVIES',
     movieInfo
 })

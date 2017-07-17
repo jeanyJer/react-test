@@ -9,3 +9,7 @@
 .movie_detail .summary {
   margin-top: 20px;
 }
+
+.movie_detail span {
+  color: #9d9d9d;
+}

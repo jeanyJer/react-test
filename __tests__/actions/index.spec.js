@@ -1,38 +1,54 @@
 import * as actions from '../../app/actions/index';
 
 describe('actions test', () => {
-  it('should create setChangeTab an action', () => {
-    const index = 2
-    const expectedAction = {
-      type: 'CHANGE_TAB',
-      index
-    }
-    expect(actions.setChangeTab(index)).toEqual(expectedAction)
-  });
 
   it('should create setBookList an action', () => {
-    const info = {
+    let bookInfo = {
     	tag: "book"
     };
-    const expectedAction = {
+    let expectedAction = {
       type: 'SET_BOOKS',
-      info
+      bookInfo
     }
-    expect(actions.setBookList(info)).toEqual(expectedAction)
+    expect(actions.setBookList(bookInfo)).toEqual(expectedAction)
+  });
+
+  it('should create setMovieList an action', () => {
+    let movieInfo = {
+      tag: "book"
+    };
+    let expectedAction = {
+      type: 'SET_MOVIES',
+      movieInfo
+    }
+    expect(actions.setMovieList(movieInfo)).toEqual(expectedAction)
   });
 
   it('should create setPageUp an action', () => {
-    const expectedAction = {
-      type: 'PAGE_UP'
+    let tag = 'book';
+    let expectedAction = {
+      type: 'PAGE_UP',
+      tag
     }
-    expect(actions.setPageUp()).toEqual(expectedAction)
+    expect(actions.setPageUp(tag)).toEqual(expectedAction)
   });
 
   it('should create setPageDown an action', () => {
-    const expectedAction = {
-      type: 'PAGE_DOWN'
+    let tag = 'book';
+    let expectedAction = {
+      type: 'PAGE_DOWN',
+      tag
     }
-    expect(actions.setPageDown()).toEqual(expectedAction)
+    expect(actions.setPageDown(tag)).toEqual(expectedAction)
+  });
+
+  it('should create resetPage an action', () => {
+    let tag = 'book';
+    let expectedAction = {
+      type: 'PAGE_RESET',
+      tag
+    }
+    expect(actions.resetPage(tag)).toEqual(expectedAction)
   });
 
 })
