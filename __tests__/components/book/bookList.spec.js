@@ -1,18 +1,19 @@
 import React from 'react';
 import BookList from '../../../app/components/book/bookList';
 import { mount } from 'enzyme';
+import $ from 'jquery';
 
 const setup = () => {
 	const props = {
 		search: {
 			q: '图书',
-            tag: '英语',
-            start: 10,
-            count: 10,
-            total: 100
+      tag: '英语',
+      start: 10,
+      count: 10,
+      total: 100
 		},
-      	list: [
-      		{
+    list: [
+      {
 				author: [],
 				image: "https://img3.doubanio.com/mpic/s1528053.jpg",
 				summary:"本书是《全国注册安全工程师执业资格考试精题精练》系列图书之一。",
@@ -27,9 +28,10 @@ const setup = () => {
       		}
       	],
       	page: 2,
-      	setBookList: jest.fn(),
+        getBookList: jest.fn(),
       	setPageUp: jest.fn(),
-      	setPageDown: jest.fn()
+      	setPageDown: jest.fn(),
+        resetPage: jest.fn()
 	};
 	const wrapper = mount(<BookList {...props} />);
 	return {
@@ -45,6 +47,7 @@ describe('This is a test for bookList component', () => {
 
 	it('BookList component should be render', () => {
 		expect(wrapper.find(".list_wrap").exists());
+    expect(props.getBookList).toHaveBeenCalled();
 		expect(wrapper.find(".list_wrap").find("li").length).toEqual(2);
 	});
 
@@ -52,18 +55,11 @@ describe('This is a test for bookList component', () => {
 		expect(wrapper.find('.page_wrap').children('p').text()).toBe('2');
 	});
 
-	it('search button clicked', async () => {
+	it('search button clicked', () => {
 	 	wrapper.find('.btn').simulate('click');
-
-	 	let param = {
-	  		q: props.q,
-	  		tag: props.tag
-	  	};
-
-	  	await BookList.prototype.getBookList(param);
-
-	 	jest.spyOn(BookList.prototype, 'getBookList');
-		//expect(BookList.prototype.getBookList).toBeCalled();
+    // $('.search_key').val('xujin');
+    // $('.search_tag').val('girl');
+    // expect(props.resetPage).toBeCalled();
 	});
 
 	it('page up button clicked', () => {

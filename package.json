@@ -64,7 +64,8 @@
 			}
 		},
 		"coveragePathIgnorePatterns": [
-			"/app/service.js"
+			"/app/service.js",
+      "/app/components/request.js"
 		]
 	},
 	"devDependencies": {

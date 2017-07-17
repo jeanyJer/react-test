@@ -34,6 +34,7 @@
 
 .list_wrap {
 	min-width: 1000px;
+  list-style: none;
 }
 
 .list_wrap li {

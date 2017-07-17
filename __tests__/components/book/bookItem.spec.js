@@ -5,12 +5,12 @@ import { mount } from 'enzyme';
 const setup = () => {
     let props = {
         content: {
-                author: ['徐瑾'],
-                image: "https://img3.doubanio.com/mpic/s1528053.jpg",
-                summary:"本书是《全国注册安全工程师执业资格考试精题精练》系列图书之一。",
-                tags: [],
-                title: "安全生产法规与安全生产管理"
-            }
+            author: ['徐瑾'],
+            image: "https://img3.doubanio.com/mpic/s1528053.jpg",
+            summary:"本书是《全国注册安全工程师执业资格考试精题精练》系列图书之一。",
+            tags: [],
+            title: "安全生产法规与安全生产管理"
+        }
     };
     let wrapper = mount(<BookItem {...props} />);
     return {
@@ -18,7 +18,6 @@ const setup = () => {
         wrapper
     }
 }
-
 
 
 describe('This is a test for bookItem component', () => {
